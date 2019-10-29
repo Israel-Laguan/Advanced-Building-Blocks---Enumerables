@@ -7,12 +7,17 @@ Rubocop:
 
 ![rubocop-validation](rubocop.png)
 
+RSpec: 
+
+![rubocop-validation](rspec.png)
+
 # Features
 
 * using `/bin` and `/lib` folders to organize code
 * using methods accepting a block using yield() and #call
 * Basic tests on methods using `rspec`
 * `module` keyword
+* `requiere_relative` use for modularize the code
 
 # Built With
 
