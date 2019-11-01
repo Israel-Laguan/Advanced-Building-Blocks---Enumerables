@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
 module Enumerable
-  def my_all?
-    raise 'Please provide a block' unless block_given?
-
-    result = false
-    my_each { |elem| result = yield(elem) ? true : false }
-    result
+  def my_all?(arg = nil)
+    if block_given?
+      my_each { |i| return false unless yield(i) }
+    elsif arg.nil?
+      my_each { |i| return false unless i }
+    else
+      my_each { |i| return false unless i.is_a?(arg) }
+    end
+    true
   end
 end

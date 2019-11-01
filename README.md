@@ -18,6 +18,17 @@ RSpec:
 * Basic tests on methods using `rspec`
 * `module` keyword
 * `requiere_relative` use for modularize the code
+* Enumerable methods rebuilt
+    + [x] [`all?`](https://ruby-doc.org/core-2.6.3/Enumerable.html#method-i-all-3F)
+    + [x] [`any?`](https://ruby-doc.org/core-2.6.3/Enumerable.html#method-i-none-3F)
+    + [x] [`count`](https://ruby-doc.org/core-2.6.3/Enumerable.html#method-i-none-3F)
+    + [x] [`each_with_index`](https://ruby-doc.org/core-2.6.3/Enumerable.html#method-i-each_with_index)
+    + [x] [`each`]()
+    + [x] [`inject`](https://ruby-doc.org/core-2.6.3/Enumerable.html#method-i-inject)
+    + [x] [`map`](https://ruby-doc.org/core-2.6.3/Enumerable.html#method-i-map)
+    + [x] [`none?`](https://ruby-doc.org/core-2.6.3/Enumerable.html#method-i-none-3F)
+    + [x] [`select`](https://ruby-doc.org/core-2.6.3/Enumerable.html#method-i-none-3F)
+* Tests made with [`RSpec`](https://relishapp.com/rspec/)
 
 # Built With
 

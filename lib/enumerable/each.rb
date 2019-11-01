@@ -2,7 +2,7 @@
 
 module Enumerable
   def my_each
-    raise 'Please provide a block' unless block_given?
+    return to_enum unless block_given?
 
     index = 0
     while index < length

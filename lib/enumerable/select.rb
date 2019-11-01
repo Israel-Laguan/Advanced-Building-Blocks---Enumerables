@@ -2,7 +2,7 @@
 
 module Enumerable
   def my_select
-    raise 'Please provide a block' unless block_given?
+    return to_enum unless block_given?
 
     new_arr = []
     my_each { |elem| new_arr << elem if yield(elem) }

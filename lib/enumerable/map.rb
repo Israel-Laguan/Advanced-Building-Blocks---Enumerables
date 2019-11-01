@@ -2,7 +2,7 @@
 
 module Enumerable
   def my_map(block = nil)
-    raise 'Please provide a block' unless block_given?
+    return to_enum unless block_given?
 
     array = []
     if block

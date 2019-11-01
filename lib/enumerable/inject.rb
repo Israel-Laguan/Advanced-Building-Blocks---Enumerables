@@ -2,7 +2,7 @@
 
 module Enumerable
   def my_inject(initial = nil)
-    raise 'Please provide a block' unless block_given?
+    return to_enum unless block_given?
 
     result = initial.nil? ? self[0] : initial
 
