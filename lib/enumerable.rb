@@ -1,5 +1,6 @@
 # frozen_string_literal: true
 
+require_relative 'enumerable/check_valid.rb'
 require_relative 'enumerable/all.rb'
 require_relative 'enumerable/any.rb'
 require_relative 'enumerable/count.rb'

@@ -7,7 +7,7 @@ module Enumerable
     elsif arg.nil?
       my_each { |i| return false unless i }
     else
-      my_each { |i| return false unless i.is_a?(arg) }
+      my_each { |i| return false if check_valid(i, arg) == false }
     end
     true
   end
