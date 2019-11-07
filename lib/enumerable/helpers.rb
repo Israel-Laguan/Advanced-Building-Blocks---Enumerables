@@ -9,5 +9,9 @@ module Enumerable
     else
       (input == parameter)
     end
-    end
+  end
+
+  def multiply_els(arr)
+    arr.my_inject { |memo, val| memo * val }
+  end
 end
