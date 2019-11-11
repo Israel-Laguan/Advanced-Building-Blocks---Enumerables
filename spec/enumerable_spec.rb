@@ -7,7 +7,7 @@ RSpec.describe Enumerable do
   let(:test_arr2) { ['Billy', 'Wild Bill', 'Big Bill', 'Coffdrop'] }
   let(:test_arr3) { [12.2, 13.4, 15.5, 16.9, 10.2] }
   let(:array) { [1, 2, 3, 'dog', 'cow', :symbol, (1..10), { name: 'antonio', job: 'engineer' }] }
-  let(:array_of_numbers) { [3, 5, 1, 8, 0, 3, 1, 1, 5, 6, 5, 0, 4, 0, 4, 3, 7, 4, 2, 2, 3, 1, 7, 8, 5, 8, 7, 7, 3, 4, 5, 2, 7, 2, 0, 6, 4, 0, 3, 2, 2, 3, 5, 7, 4, 3, 6, 3, 7, 3, 5, 6, 5, 3, 1, 8, 2, 5, 6, 7, 2, 6, 7, 5, 2, 7, 3, 0, 2, 6, 7, 2, 7, 5, 8, 3, 5, 1, 5, 2, 0, 8, 6, 1, 1, 6, 3, 3, 4, 5, 5, 7, 7, 7, 8, 5, 6, 2, 4, 8] }
+  let(:array_of_numbers) { [3, 5, 1, 8, 0, 3, 1, 1, 5, 6, 5, 0, 4, 0, 4, 3, 7, 4, 2, 2, 3, 1, 7, 8, 5, 8] }
   let(:array_of_strings) { %w[dog cat lion] }
   let(:array_of_mix_integers_and_strings) { array_of_numbers + array_of_strings }
   let(:array_of_nils) { [nil, nil, nil] }
