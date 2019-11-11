@@ -2,7 +2,8 @@
 
 module Enumerable
   def check_valid(input, parameter)
-    input.instance_of?(parameter) if parameter.is_a? Class
+    return input.is_a?(parameter) if parameter.is_a? Class
+
     if parameter.is_a? Regexp
       return false if input.is_a?(Numeric)
 
