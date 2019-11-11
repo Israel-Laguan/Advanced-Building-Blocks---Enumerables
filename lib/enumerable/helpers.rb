@@ -2,16 +2,21 @@
 
 module Enumerable
   def check_valid(input, parameter)
+    input.instance_of?(parameter) if parameter.is_a? Class
     if parameter.is_a? Regexp
-      !input.to_s.match(parameter).nil?
-    elsif parameter.is_a? Class
-      (input.class == parameter)
-    else
-      (input == parameter)
+      return false if input.is_a?(Numeric)
+
+      return parameter.match(input)
     end
+    (input == parameter)
   end
 
-  def multiply_els(arr)
-    arr.my_inject { |memo, val| memo * val }
+  def verify_input(initial)
+    start = initial.nil? ? 1 : 0
+    start
+  end
+
+  def multiply_els(arr, multiplier)
+    arr.my_inject(multiplier) { |memo, val| memo * val }
   end
 end

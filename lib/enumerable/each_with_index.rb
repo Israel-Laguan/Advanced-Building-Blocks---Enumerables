@@ -5,7 +5,11 @@ module Enumerable
     return to_enum unless block_given?
 
     input = is_a?(Range) ? to_a : self
-    my_each { |index| yield(input[index], index) }
+    index = 0
+    while index < size
+      yield(input[index], index)
+      index += 1
+    end
     input
   end
 end

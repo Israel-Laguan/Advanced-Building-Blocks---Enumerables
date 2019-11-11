@@ -6,10 +6,10 @@ module Enumerable
 
     input = is_a?(Range) ? to_a : self
     index = 0
-    while index < input.length
+    while index < size
       yield(input[index])
       index += 1
     end
-    self
+    input
   end
 end

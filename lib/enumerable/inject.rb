@@ -1,12 +1,16 @@
 # frozen_string_literal: true
 
 module Enumerable
-  def my_inject(initial = nil)
-    input = self.class == Range ? to_a : self
-    result = initial.nil? || initial.is_a?(Symbol) ? input[0] : initial
+  def my_inject(initial = nil, operation = nil)
+    return multiply_els(self, initial) if operation == :*
 
+    verified = verify_input(initial)
+
+    input = self.class == Range ? to_a : self
+    result = initial.nil? || initial.is_a?(Symbol) ? 0 : initial
     if block_given?
-      input[initial.nil? ? 1 : 0..- 1].my_each do |i|
+      start = verified[1]
+      input[start..- 1].my_each do |i|
         result = yield(result, i)
       end
     else

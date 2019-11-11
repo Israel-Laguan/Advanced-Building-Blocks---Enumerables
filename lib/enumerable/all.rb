@@ -3,12 +3,11 @@
 module Enumerable
   def my_all?(arg = nil)
     if block_given?
-      my_each { |i| return false unless yield(i) }
-    elsif arg.nil?
-      my_each { |i| return false unless i }
-    else
-      my_each { |i| return false if check_valid(i, arg) == false }
+      my_each { |element| return false unless yield(element) }
     end
+    return true if arg.nil?
+
+    my_each { |i| return false unless check_valid(i, arg) }
     true
   end
 end
