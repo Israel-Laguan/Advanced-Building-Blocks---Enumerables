@@ -16,8 +16,4 @@ module Enumerable
     start = initial.nil? ? 1 : 0
     start
   end
-
-  def multiply_els(arr, multiplier)
-    arr.my_inject(multiplier) { |memo, val| memo * val }
-  end
 end

@@ -1,23 +1,17 @@
 # frozen_string_literal: true
 
 module Enumerable
-  def my_inject(initial = nil, operation = nil)
-    return multiply_els(self, initial) if operation == :*
+  def my_inject(arg_1 = nil, arg_2 = nil)
+    (inject, sym, array) = get_inject_and_sym(arg_1, arg_2, to_a.dup, block_given?)
+    array.my_each { |i| inject = sym ? inject.send(sym, i) : yield(inject, i) }
+    inject
+  end
 
-    verified = verify_input(initial)
+  def get_inject_and_sym(arg1, arg2, arr, block)
+    arg1 = arr.shift if arg1.nil? && block
+    return [arg1, nil, arr] if block
+    return [arr.shift, arg1, arr] if arg2.nil?
 
-    input = self.class == Range ? to_a : self
-    result = initial.nil? || initial.is_a?(Symbol) ? 0 : initial
-    if block_given?
-      start = verified[1]
-      input[start..- 1].my_each do |i|
-        result = yield(result, i)
-      end
-    else
-      input[1..-1].my_each do |i|
-        result = result.send(initial, i)
-      end
-    end
-    result
+    [arg1, arg2, arr]
   end
 end
